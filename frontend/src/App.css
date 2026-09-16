@@ -1,0 +1,16 @@
+/* App.css - Modern Editorial Layout Utilities */
+:root {
+  --canvas: #F8F7F4;
+  --surface: #FFFFFF;
+  --text-main: #171A19;
+  --text-muted: #656A67;
+  --evergreen: #173F3A;
+  --eucalyptus: #587B74;
+  --border-line: #DFE3E1;
+}
+
+.editorial-divider {
+  height: 1px;
+  background-color: #DFE3E1;
+  width: 100%;
+}
