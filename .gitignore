@@ -1,0 +1,118 @@
+# ============================================================
+# EventSphere - Root .gitignore
+# Stack: Django (Python) backend + Vite/React (Node) frontend
+# ============================================================
+
+# ─── Python / Django (backend) ───────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env.bak
+ENV/
+env.bak/
+
+# Django specific
+*.log
+db.sqlite3
+db.sqlite3-journal
+/backend/media/
+/backend/staticfiles/
+/backend/static_collected/
+
+# Distribution / packaging
+.eggs/
+*.egg-info/
+dist/
+build/
+*.egg
+MANIFEST
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# MyPy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments — keep .env.example, ignore real secrets
+backend/.env
+.env
+!.env.example
+!backend/.env.example
+
+# ─── Node / Vite / React (frontend) ──────────────────────────
+frontend/node_modules/
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local env files
+*.local
+
+# ─── OS & Editor ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# VS Code (keep shared workspace settings if desired)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains IDEs
+.idea/
+
+# Vim
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Misc ─────────────────────────────────────────────────────
+*.bak
+*.tmp
+*.orig
