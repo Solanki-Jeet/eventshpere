@@ -1,0 +1,43 @@
+"""
+URL configuration for core project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
+
+def api_root(request):
+    return redirect('admin:index')
+
+from events.views import CategoryListView, CityListView
+
+urlpatterns = [
+    path('', api_root, name='api_root'),
+    path('admin/', admin.site.urls),
+    path('api/auth/', include('users.urls')),
+    path('api/venues/', include('venues.urls')),
+    path('api/events/', include('events.urls')),
+    path('api/categories/', CategoryListView.as_view(), name='categories_list'),
+    path('api/cities/', CityListView.as_view(), name='cities_list'),
+    path('api/interactions/', include('interactions.urls')),
+    path('api/payments/', include('payments.urls')),
+    path('api/organizer/', include('analytics.urls')),
+    path('api/analytics/', include('analytics.urls')),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
